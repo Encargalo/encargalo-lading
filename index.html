@@ -5,27 +5,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Encárgalo — Todo lo que necesitas, en tu puerta</title>
 <link rel="icon" type="image/png" href="assets/favicon.png" />
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
+  :root {
+    --accent:#FF5A0A; --accent-2:#FF3B1F; --accent-3:#FF7A3A; --accent-pale:#FFF0E8;
+    --ink:#1A1A1A; --ink-60:rgba(26,26,26,.6); --ink-35:rgba(26,26,26,.35); --ink-10:rgba(26,26,26,.08);
+    --neutral:#F4F4F5; --radius:28px;
+  }
   html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-  body { margin: 0; }
+  body { margin: 0; overflow-x: hidden; font-family: Manrope, system-ui, sans-serif; color: var(--ink); background: #fff; }
   @keyframes enc-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-  @keyframes enc-float2 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
   @keyframes enc-bob { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-10px) rotate(-1.2deg); } }
   @keyframes enc-pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .55; transform: scale(1.5); } }
   @keyframes enc-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @keyframes enc-spin { to { transform: rotate(360deg); } }
-</style>
-</helmet>
 
-<div ref="{{ rootRef }}" style="--accent:#FF5A0A; --accent-2:#FF3B1F; --accent-3:#FF7A3A; --accent-pale:#FFF0E8; --ink:#1A1A1A; --ink-60:rgba(26,26,26,.6); --ink-35:rgba(26,26,26,.35); --ink-10:rgba(26,26,26,.08); --neutral:#F4F4F5; --radius:28px; font-family:Manrope,system-ui,sans-serif; color:var(--ink); background:#fff; overflow:hidden; position:relative;">
+  .nav-link { transition: color .2s; }
+  .nav-link:hover { color: var(--ink); }
+  .btn-glow { transition: transform .2s, box-shadow .2s; }
+  .btn-glow:hover { transform: translateY(-2px); }
+  .btn-nav-cta:hover { box-shadow: 0 12px 30px rgba(255,90,10,.42); }
+  .btn-hero-primary:hover { box-shadow: 0 16px 40px rgba(255,90,10,.45); }
+  .btn-hero-secondary { transition: border-color .2s, transform .2s; }
+  .btn-hero-secondary:hover { border-color: var(--ink); transform: translateY(-2px); }
+  .footer-link { transition: color .2s; }
+  .footer-link:hover { color: #fff; }
+  .social-link { transition: color .2s; }
+  .social-link:hover { color: #fff; }
+
+  .faq-item { border: 1px solid var(--ink-10); border-radius: 18px; background: #fff; overflow: hidden; }
+  .faq-summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; }
+  .faq-summary::-webkit-details-marker { display: none; }
+  .faq-q { font-family: Sora, sans-serif; font-weight: 700; font-size: 16.5px; color: var(--ink); }
+  .faq-icon { flex-shrink: 0; position: relative; display: flex; width: 30px; height: 30px; border-radius: 50%; background: var(--accent-pale); }
+  .faq-icon::before, .faq-icon::after { content: ''; position: absolute; top: 50%; left: 50%; background: var(--accent); transform: translate(-50%, -50%); }
+  .faq-icon::before { width: 12px; height: 2px; }
+  .faq-icon::after { width: 2px; height: 12px; transition: transform .2s; }
+  details[open] .faq-icon::after { transform: translate(-50%, -50%) scaleY(0); }
+  .faq-a { padding: 0 24px 22px; font-family: Manrope; font-weight: 500; font-size: 15px; line-height: 1.65; color: var(--ink-60); }
+</style>
+</head>
+<body>
 
   <!-- ===================== NAV ===================== -->
   <nav data-nav style="position:fixed; top:0; left:0; right:0; z-index:100; height:74px; display:flex; align-items:center; padding:0 28px; background:rgba(255,255,255,.7); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); transition:box-shadow .3s, background .3s;">
@@ -35,11 +57,11 @@
         <span style="font-family:Sora,sans-serif; font-weight:800; font-size:21px; letter-spacing:-.01em; color:var(--ink);">Encárgalo</span>
       </a>
       <ul style="display:flex; align-items:center; gap:30px; margin:0 0 0 auto; padding:0; list-style:none;">
-        <li><a href="#how" style="font-family:Manrope; font-weight:600; font-size:15px; color:var(--ink-60); text-decoration:none; transition:color .2s;" style-hover="color:var(--ink);">Cómo funciona</a></li>
-        <li><a href="#compare" style="font-family:Manrope; font-weight:600; font-size:15px; color:var(--ink-60); text-decoration:none; transition:color .2s;" style-hover="color:var(--ink);">Por qué nosotros</a></li>
-        <li><a href="#faq" style="font-family:Manrope; font-weight:600; font-size:15px; color:var(--ink-60); text-decoration:none; transition:color .2s;" style-hover="color:var(--ink);">Preguntas frecuentes</a></li>
+        <li><a href="#how" class="nav-link" style="font-family:Manrope; font-weight:600; font-size:15px; color:var(--ink-60); text-decoration:none;">Cómo funciona</a></li>
+        <li><a href="#compare" class="nav-link" style="font-family:Manrope; font-weight:600; font-size:15px; color:var(--ink-60); text-decoration:none;">Por qué nosotros</a></li>
+        <li><a href="#faq" class="nav-link" style="font-family:Manrope; font-weight:600; font-size:15px; color:var(--ink-60); text-decoration:none;">Preguntas frecuentes</a></li>
       </ul>
-      <a href="#download" style="display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff; font-family:Sora,sans-serif; font-weight:700; font-size:14px; padding:11px 22px; border-radius:100px; text-decoration:none; box-shadow:0 8px 22px rgba(255,90,10,.32); transition:transform .2s, box-shadow .2s;" style-hover="transform:translateY(-2px); box-shadow:0 12px 30px rgba(255,90,10,.42);">Descargar app</a>
+      <a href="#download" class="btn-glow btn-nav-cta" style="display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff; font-family:Sora,sans-serif; font-weight:700; font-size:14px; padding:11px 22px; border-radius:100px; text-decoration:none; box-shadow:0 8px 22px rgba(255,90,10,.32);">Descargar app</a>
     </div>
   </nav>
 
@@ -59,11 +81,11 @@
           Pide en tus comercios favoritos: comida, mercado, farmacia y mucho más. Te lo llevamos en unos 25 minutos, lo sigues en tiempo real y pagas como prefieras. Sin salir de casa.
         </p>
         <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:26px;">
-          <a href="#download" style="display:inline-flex; align-items:center; gap:10px; background:var(--accent); color:#fff; font-family:Sora,sans-serif; font-weight:700; font-size:16px; padding:16px 30px; border-radius:100px; text-decoration:none; box-shadow:0 12px 32px rgba(255,90,10,.35); transition:transform .2s, box-shadow .2s;" style-hover="transform:translateY(-2px); box-shadow:0 16px 40px rgba(255,90,10,.45);">
+          <a href="#download" class="btn-glow btn-hero-primary" style="display:inline-flex; align-items:center; gap:10px; background:var(--accent); color:#fff; font-family:Sora,sans-serif; font-weight:700; font-size:16px; padding:16px 30px; border-radius:100px; text-decoration:none; box-shadow:0 12px 32px rgba(255,90,10,.35);">
             Quiero mi pedido
             <svg width="17" height="17" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-          <a href="#how" style="display:inline-flex; align-items:center; gap:8px; background:#fff; color:var(--ink); font-family:Sora,sans-serif; font-weight:700; font-size:16px; padding:16px 24px; border-radius:100px; text-decoration:none; border:2px solid var(--ink-10); transition:border-color .2s, transform .2s;" style-hover="border-color:var(--ink); transform:translateY(-2px);">
+          <a href="#how" class="btn-hero-secondary" style="display:inline-flex; align-items:center; gap:8px; background:#fff; color:var(--ink); font-family:Sora,sans-serif; font-weight:700; font-size:16px; padding:16px 24px; border-radius:100px; text-decoration:none; border:2px solid var(--ink-10);">
             Ver cómo funciona
           </a>
         </div>
@@ -313,7 +335,7 @@
         <h2 style="font-family:Sora,sans-serif; font-weight:800; font-size:clamp(26px,3.4vw,38px); line-height:1.1; letter-spacing:-.02em; margin:0 0 14px; color:#fff;">Nuevos comercios cada semana — y tus primeros pedidos cuestan menos.</h2>
         <p style="font-family:Manrope; font-weight:500; font-size:17px; line-height:1.6; color:rgba(255,255,255,.92); margin:0;">Agregamos nuevos comercios locales en tu ciudad cada semana. Descarga ahora y aprovecha un descuento de lanzamiento en tus primeros pedidos, mientras queden cupos.</p>
       </div>
-      <a href="#download" style="display:inline-flex; align-items:center; gap:10px; background:#fff; color:var(--accent); font-family:Sora,sans-serif; font-weight:800; font-size:17px; padding:18px 34px; border-radius:100px; text-decoration:none; box-shadow:0 14px 36px rgba(26,26,26,.18); transition:transform .2s; white-space:nowrap;" style-hover="transform:translateY(-2px);">
+      <a href="#download" class="btn-glow" style="display:inline-flex; align-items:center; gap:10px; background:#fff; color:var(--accent); font-family:Sora,sans-serif; font-weight:800; font-size:17px; padding:18px 34px; border-radius:100px; text-decoration:none; box-shadow:0 14px 36px rgba(26,26,26,.18); white-space:nowrap;">
         Quiero mi descuento
         <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
@@ -328,17 +350,41 @@
         <h2 style="font-family:Sora,sans-serif; font-weight:800; font-size:clamp(30px,4.6vw,46px); line-height:1.05; letter-spacing:-.02em; margin:0; color:var(--ink);">Preguntas, respondidas.</h2>
       </div>
       <div style="display:flex; flex-direction:column; gap:12px;">
-        <sc-for list="{{ faqs }}" as="item" hint-placeholder-count="5">
-          <div style="border:1px solid var(--ink-10); border-radius:18px; background:#fff; overflow:hidden;">
-            <button onClick="{{ item.toggle }}" style="width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 24px; background:none; border:none; cursor:pointer; text-align:left;">
-              <span style="font-family:Sora,sans-serif; font-weight:700; font-size:16.5px; color:var(--ink);">{{ item.q }}</span>
-              <span style="flex-shrink:0; display:flex; width:30px; height:30px; border-radius:50%; background:var(--accent-pale); align-items:center; justify-content:center; font-family:Sora,sans-serif; font-weight:800; font-size:18px; color:var(--accent);">{{ item.icon }}</span>
-            </button>
-            <sc-if value="{{ item.open }}" hint-placeholder-val="{{ true }}">
-              <div style="padding:0 24px 22px; font-family:Manrope; font-weight:500; font-size:15px; line-height:1.65; color:var(--ink-60);">{{ item.a }}</div>
-            </sc-if>
-          </div>
-        </sc-for>
+        <details class="faq-item" open>
+          <summary class="faq-summary">
+            <span class="faq-q">¿Cuánto cuesta?</span>
+            <span class="faq-icon"></span>
+          </summary>
+          <div class="faq-a">La app es gratis para descargar y usar. No hay membresía ni pedido mínimo. Pagas lo que compras más una tarifa de envío, y ves el total completo antes de confirmar tu pedido.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span class="faq-q">¿Qué tan rápida es la entrega?</span>
+            <span class="faq-icon"></span>
+          </summary>
+          <div class="faq-a">En promedio unos 25 minutos, según el comercio y tu dirección. Verás el seguimiento en vivo todo el camino, así siempre sabrás cuándo llega.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span class="faq-q">¿Puedo confiar en la app?</span>
+            <span class="faq-icon"></span>
+          </summary>
+          <div class="faq-a">Sí. Encárgalo tiene una calificación de 4.9★ en miles de pedidos, con más de 500 comercios locales y seguimiento en tiempo real en cada entrega.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span class="faq-q">¿Qué pasa después de pedir?</span>
+            <span class="faq-icon"></span>
+          </summary>
+          <div class="faq-a">Recibes una confirmación y luego el seguimiento en vivo desde el comercio hasta tu puerta. Pagas como ya lo haces, y tu repartidor te lo lleva directo.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span class="faq-q">¿A dónde entregan?</span>
+            <span class="faq-icon"></span>
+          </summary>
+          <div class="faq-a">Hoy en Caracas, Maracay y Valencia — y estamos agregando nuevas ciudades y comercios cada semana.</div>
+        </details>
       </div>
     </div>
   </section>
@@ -386,100 +432,52 @@
       <div>
         <div style="font-family:Sora,sans-serif; font-weight:700; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:18px;">Producto</div>
         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
-          <li><a href="#how" style="font-family:Manrope; font-weight:500; font-size:14px; color:rgba(255,255,255,.55); text-decoration:none; transition:color .2s;" style-hover="color:#fff;">Cómo funciona</a></li>
-          <li><a href="#compare" style="font-family:Manrope; font-weight:500; font-size:14px; color:rgba(255,255,255,.55); text-decoration:none; transition:color .2s;" style-hover="color:#fff;">Por qué Encárgalo</a></li>
-          <li><a href="#download" style="font-family:Manrope; font-weight:500; font-size:14px; color:rgba(255,255,255,.55); text-decoration:none; transition:color .2s;" style-hover="color:#fff;">Descargar app</a></li>
+          <li><a href="#how" class="footer-link" style="font-family:Manrope; font-weight:500; font-size:14px; color:rgba(255,255,255,.55); text-decoration:none;">Cómo funciona</a></li>
+          <li><a href="#compare" class="footer-link" style="font-family:Manrope; font-weight:500; font-size:14px; color:rgba(255,255,255,.55); text-decoration:none;">Por qué Encárgalo</a></li>
+          <li><a href="#download" class="footer-link" style="font-family:Manrope; font-weight:500; font-size:14px; color:rgba(255,255,255,.55); text-decoration:none;">Descargar app</a></li>
         </ul>
       </div>
       <div>
         <div style="font-family:Sora,sans-serif; font-weight:700; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:18px;">Empresa</div>
         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
-          <li><a href="#" style="font-family:Manrope; font-weight:500; font-size:14px; color:rgba(255,255,255,.55); text-decoration:none; transition:color .2s;" style-hover="color:#fff;">Sobre nosotros</a></li>
-          <li><a href="#" style="font-family:Manrope; font-weight:500; font-size:14px; color:rgba(255,255,255,.55); text-decoration:none; transition:color .2s;" style-hover="color:#fff;">Trabaja con nosotros</a></li>
-          <li><a href="#" style="font-family:Manrope; font-weight:500; font-size:14px; color:rgba(255,255,255,.55); text-decoration:none; transition:color .2s;" style-hover="color:#fff;">Para comercios</a></li>
+          <li><a href="#" class="footer-link" style="font-family:Manrope; font-weight:500; font-size:14px; color:rgba(255,255,255,.55); text-decoration:none;">Sobre nosotros</a></li>
+          <li><a href="#" class="footer-link" style="font-family:Manrope; font-weight:500; font-size:14px; color:rgba(255,255,255,.55); text-decoration:none;">Trabaja con nosotros</a></li>
+          <li><a href="#" class="footer-link" style="font-family:Manrope; font-weight:500; font-size:14px; color:rgba(255,255,255,.55); text-decoration:none;">Para comercios</a></li>
         </ul>
       </div>
       <div>
         <div style="font-family:Sora,sans-serif; font-weight:700; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:18px;">Legal</div>
         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
-          <li><a href="terminos-y-condiciones.html" style="font-family:Manrope; font-weight:500; font-size:14px; color:rgba(255,255,255,.55); text-decoration:none; transition:color .2s;" style-hover="color:#fff;">Términos de uso</a></li>
-          <li><a href="politica-de-privacidad.html" style="font-family:Manrope; font-weight:500; font-size:14px; color:rgba(255,255,255,.55); text-decoration:none; transition:color .2s;" style-hover="color:#fff;">Privacidad</a></li>
+          <li><a href="terminos-y-condiciones.html" class="footer-link" style="font-family:Manrope; font-weight:500; font-size:14px; color:rgba(255,255,255,.55); text-decoration:none;">Términos de uso</a></li>
+          <li><a href="politica-de-privacidad.html" class="footer-link" style="font-family:Manrope; font-weight:500; font-size:14px; color:rgba(255,255,255,.55); text-decoration:none;">Privacidad</a></li>
         </ul>
       </div>
     </div>
     <div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding-top:26px; border-top:1px solid rgba(255,255,255,.08);">
       <span style="font-family:Manrope; font-weight:500; font-size:13px; color:rgba(255,255,255,.3);">© 2026 Encárgalo. Todos los derechos reservados.</span>
       <div style="display:flex; gap:16px;">
-        <a href="#" aria-label="Instagram" style="display:flex; color:rgba(255,255,255,.4); transition:color .2s;" style-hover="color:#fff;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-        <a href="#" aria-label="X" style="display:flex; color:rgba(255,255,255,.4); transition:color .2s;" style-hover="color:#fff;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" aria-label="Instagram" class="social-link" style="display:flex; color:rgba(255,255,255,.4);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="X" class="social-link" style="display:flex; color:rgba(255,255,255,.4);"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
       </div>
     </div>
   </footer>
-</div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{
-  &quot;$preview&quot;: { &quot;width&quot;: 1200 },
-  &quot;accent&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Naranja&quot;, &quot;Rojo&quot;, &quot;Coral&quot;], &quot;default&quot;: &quot;Naranja&quot;, &quot;tsType&quot;: &quot;string&quot; },
-  &quot;cornerStyle&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Redondeado&quot;, &quot;Suave&quot;, &quot;Recto&quot;], &quot;default&quot;: &quot;Redondeado&quot;, &quot;tsType&quot;: &quot;string&quot; }
-}">
-class Component extends DCLogic {
-  rootRef = React.createRef();
-  state = { openFaq: 0 };
 
-  applyVars() {
-    const el = this.rootRef.current;
-    if (!el) return;
-    const accents = { 'Naranja': '#FF5A0A', 'Rojo': '#FF3B1F', 'Coral': '#FF7A3A' };
-    el.style.setProperty('--accent', accents[this.props.accent] || '#FF5A0A');
-    const radii = { 'Redondeado': '28px', 'Suave': '18px', 'Recto': '8px' };
-    el.style.setProperty('--radius', radii[this.props.cornerStyle] || '28px');
-  }
-
-  componentDidMount() {
-    this.applyVars();
-    this.initNav();
-  }
-
-  componentDidUpdate() {
-    this.applyVars();
-  }
-
-  initNav() {
-    const root = this.rootRef.current;
-    if (!root) return;
-    const nav = root.querySelector('[data-nav]');
-    if (!nav) return;
-    const onScroll = () => {
-      if (window.scrollY > 20) {
-        nav.style.boxShadow = '0 6px 30px rgba(26,26,26,.08)';
-        nav.style.background = 'rgba(255,255,255,.9)';
-      } else {
-        nav.style.boxShadow = 'none';
-        nav.style.background = 'rgba(255,255,255,.7)';
+  <script>
+    (function () {
+      var nav = document.querySelector('[data-nav]');
+      if (!nav) return;
+      function onScroll() {
+        if (window.scrollY > 20) {
+          nav.style.boxShadow = '0 6px 30px rgba(26,26,26,.08)';
+          nav.style.background = 'rgba(255,255,255,.9)';
+        } else {
+          nav.style.boxShadow = 'none';
+          nav.style.background = 'rgba(255,255,255,.7)';
+        }
       }
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
-
-  renderVals() {
-    const data = [
-      { q: '¿Cuánto cuesta?', a: 'La app es gratis para descargar y usar. No hay membresía ni pedido mínimo. Pagas lo que compras más una tarifa de envío, y ves el total completo antes de confirmar tu pedido.' },
-      { q: '¿Qué tan rápida es la entrega?', a: 'En promedio unos 25 minutos, según el comercio y tu dirección. Verás el seguimiento en vivo todo el camino, así siempre sabrás cuándo llega.' },
-      { q: '¿Puedo confiar en la app?', a: 'Sí. Encárgalo tiene una calificación de 4.9★ en miles de pedidos, con más de 500 comercios locales y seguimiento en tiempo real en cada entrega.' },
-      { q: '¿Qué pasa después de pedir?', a: 'Recibes una confirmación y luego el seguimiento en vivo desde el comercio hasta tu puerta. Pagas como ya lo haces, y tu repartidor te lo lleva directo.' },
-      { q: '¿A dónde entregan?', a: 'Hoy en Caracas, Maracay y Valencia — y estamos agregando nuevas ciudades y comercios cada semana.' },
-    ];
-    const faqs = data.map((f, i) => ({
-      q: f.q,
-      a: f.a,
-      open: this.state.openFaq === i,
-      icon: this.state.openFaq === i ? '–' : '+',
-      toggle: () => this.setState((s) => ({ openFaq: s.openFaq === i ? -1 : i })),
-    }));
-    return { rootRef: this.rootRef, faqs };
-  }
-}
-</script>
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
 </body>
 </html>
