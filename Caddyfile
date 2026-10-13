@@ -1,0 +1,21 @@
+{
+	auto_https off
+	admin off
+}
+
+:{$PORT:8080} {
+	root * /srv
+	encode gzip
+
+	# Páginas legales: se sirven sin extensión
+	try_files {path} {path}.html
+
+	@slug {
+		path_regexp ^/[^/.]+$
+		not file {path}.html
+		not file {path}
+	}
+	rewrite @slug /tienda.html
+
+	file_server
+}
