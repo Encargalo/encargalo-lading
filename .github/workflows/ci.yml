@@ -19,5 +19,6 @@ jobs:
         with:
           args: >-
             --no-progress
+            --root-dir ${{ github.workspace }}
             './**/*.html'
           fail: true
