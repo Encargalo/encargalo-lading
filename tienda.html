@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Abrir en Play Store — Encárgalo</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      .tienda {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        text-align: center;
+        font-family: var(--font-base);
+        color: var(--color-ink);
+        background: var(--color-surface-alt);
+      }
+      .tienda__card {
+        max-width: 420px;
+        width: 100%;
+        background: var(--color-surface);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-md);
+        padding: 40px 28px;
+      }
+      .tienda__logo { height: 40px; margin-bottom: 24px; }
+      .tienda h1 { font-size: 22px; font-weight: 800; margin: 0 0 8px; }
+      .tienda p { color: var(--color-ink-muted); margin: 0 0 24px; font-size: 15px; }
+    </style>
+  </head>
+  <body>
+    <main class="tienda">
+      <div class="tienda__card">
+        <img src="/assets/imagotipo.svg" alt="Encárgalo" class="tienda__logo" />
+        <h1>Abre esta tienda en la app</h1>
+        <p>Te llevamos a Google Play para que instales Encárgalo y continúes.</p>
+        <a id="playLink" class="btn btn-primary btn-block" href="https://play.google.com/store/apps/details?id=com.encargalo.app">Abrir en Play Store</a>
+      </div>
+    </main>
+    <script>
+      (function () {
+        var parts = location.pathname.split("/").filter(Boolean);
+        var slug = parts.length === 1 ? parts[0] : "";
+        if (!/^[a-z0-9-]+$/.test(slug)) {
+          location.replace("/");
+          return;
+        }
+        var url =
+          "https://play.google.com/store/apps/details?id=com.encargalo.app&referrer=" +
+          encodeURIComponent(slug);
+        document.getElementById("playLink").href = url;
+        location.replace(url);
+      })();
+    </script>
+  </body>
+</html>

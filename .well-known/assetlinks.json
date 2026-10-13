@@ -1,0 +1,22 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.encargalo.app",
+      "sha256_cert_fingerprints": [
+        "0D:DD:DE:C9:6A:EF:AC:73:D9:F9:A8:70:8D:8C:FC:B3:9B:2A:60:93:DA:E8:CC:F4:57:78:95:D4:5F:4B:81:04"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.encargalo.app.dev",
+      "sha256_cert_fingerprints": [
+        "26:EF:E7:74:F8:ED:0F:01:78:19:72:4B:3E:46:28:B8:53:8C:D7:7D:63:57:E8:70:D3:5B:FB:AA:B0:E6:AE:22"
+      ]
+    }
+  }
+]
