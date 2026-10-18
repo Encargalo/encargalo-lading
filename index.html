@@ -3,377 +3,490 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Encárgalo — Tu app de delivery rápida, fácil y confiable</title>
-    <meta name="description" content="Encárgalo conecta tus tiendas favoritas con encargistas verificados en Venezuela. Compra, sigue tu pedido en tiempo real y recíbelo en la puerta de tu casa." />
+    <title>Encárgalo</title>
+    <meta
+      name="description"
+      content="Pide en tus tiendas favoritas y recíbelo rápido y seguro, todo desde el celular. Descarga Encárgalo en Google Play."
+    />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <header class="site-header">
-      <div class="container site-header__inner">
-        <a href="#inicio" class="logo">
-          <img src="assets/imagotipo.svg" alt="Encárgalo" class="logo__img" />
-        </a>
+  <body class="landing">
+    <!-- Cabecera fija -->
+    <header class="topbar">
+      <div class="topbar__inner">
+        <div class="nav">
+          <a href="#inicio" class="nav__logo" aria-label="Encárgalo">
+            <img
+              src="assets/logotipo.png"
+              alt="Encárgalo"
+              width="180"
+              height="40"
+            />
+          </a>
 
-        <nav class="nav">
-          <a href="#inicio">Inicio</a>
-          <a href="#nosotros">Nosotros</a>
-          <a href="#como-funciona">Cómo funciona</a>
-          <a href="#features">Features</a>
-          <a href="#testimonios">Testimonios</a>
-        </nav>
+          <nav class="nav__links" id="navLinks" aria-label="Principal">
+            <a href="#inicio" class="is-active">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto">Contacto</a>
+          </nav>
 
-        <div class="header-cta">
-          <a href="#como-funciona" class="btn btn-primary">Descargar app</a>
-          <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+          <div class="nav__actions">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.encargalo.app"
+              class="pill-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              <img src="assets/icon-download.svg" alt="" width="17" height="17" />
+              Descargar
+            </a>
+            <button
+              class="nav__toggle"
+              id="navToggle"
+              aria-label="Abrir menú"
+              aria-expanded="false"
+              aria-controls="navLinks"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Inicio -->
+    <section class="inicio" id="inicio">
+
+      <div class="presentacion">
+        <div class="mensaje">
+          <p class="promesa">
+            Rápido, fácil y seguro <span aria-hidden="true">🛍️</span>
+          </p>
+          <h1>
+            <span>Tus tiendas,</span>
+            <span>a tu puerta</span>
+            <span class="accent">más rápido</span>
+          </h1>
+          <p class="mensaje__texto">
+            Pide en tus tiendas favoritas y recíbelo rápido y seguro, todo desde
+            el celular.
+          </p>
+          <div class="mensaje__acciones">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.encargalo.app"
+              class="pill-btn"
+              target="_blank"
+              rel="noopener"
+              >Pedir ahora</a
+            >
+          </div>
+        </div>
+
+        <div class="visual">
+          <div class="art">
+            <img
+              class="art__fondo"
+              src="assets/fondo-ilustracion.svg"
+              alt=""
+              width="355"
+              height="345"
+            />
+            <img
+              class="art__cliente"
+              src="assets/hero-cliente.webp"
+              alt="Cliente disfrutando su pedido"
+              width="445"
+              height="455"
+            />
+
+            <div class="card card--producto">
+              <img
+                class="card__thumb"
+                src="assets/perro-caliente.webp"
+                alt=""
+                width="65"
+                height="61"
+              />
+              <p class="card__nombre">Perro caliente</p>
+              <p class="card__stars" aria-hidden="true">★★★★★</p>
+              <p class="card__precio">$4.50</p>
+              <span class="card__add" aria-hidden="true">
+                <img src="assets/icon-cart.svg" alt="" width="16" height="16" />
+              </span>
+            </div>
+
+            <div class="card card--delivery">
+              <img
+                src="assets/moto-reparto.webp"
+                alt=""
+                width="24"
+                height="24"
+              />
+              <div class="card__tiempo">
+                <strong>Delivery</strong>
+                <span>En tiempo real</span>
+              </div>
+            </div>
+
+            <div class="card card--favorito">
+              <div class="card__detalle">
+                <strong>Burger americana</strong>
+                <span class="card__stars card__stars--sm" aria-hidden="true"
+                  >★★★★★</span
+                >
+                <span class="card__precio card__precio--sm">$8.75</span>
+              </div>
+              <img
+                class="card__burger"
+                src="assets/hamburguesa.webp"
+                alt=""
+                width="80"
+                height="72"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nuestros servicios -->
+    <section class="servicios" id="servicios">
+      <div class="section-head">
+        <p class="eyebrow">Lo que hacemos</p>
+        <h2>Tu aliado favorito<br />para cada antojo</h2>
+      </div>
+
+      <div class="beneficios">
+        <article class="beneficio">
+          <img
+            class="beneficio__ilus"
+            src="assets/ilus-board.png"
+            alt=""
+            width="62"
+            height="62"
+          />
+          <h3>Fácil de pedir</h3>
+          <p>Elige tus favoritos y haz tu pedido en unos pocos pasos.</p>
+        </article>
+        <article class="beneficio beneficio--destacado">
+          <img
+            class="beneficio__ilus"
+            src="assets/ilus-moto.png"
+            alt=""
+            width="62"
+            height="62"
+          />
+          <h3>Entrega rápida</h3>
+          <p>Pide en tus tiendas favoritas y recíbelo directo en tu puerta.</p>
+        </article>
+        <article class="beneficio">
+          <img
+            class="beneficio__ilus"
+            src="assets/ilus-chef.png"
+            alt=""
+            width="62"
+            height="62"
+          />
+          <h3>La mejor calidad</h3>
+          <p>Pide en negocios locales y recibe justo lo que elegiste.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="testimonios" id="testimonios">
+      <h2>Lo que dicen de nosotros</h2>
+      <span class="acento" aria-hidden="true"></span>
+      <p class="testimonios__intro">
+        Cada pedido tiene una historia. Estas son algunas de las personas que ya
+        confían en Encárgalo.
+      </p>
+
+      <div class="carrusel">
+        <button
+          class="carrusel__flecha"
+          id="opPrev"
+          aria-label="Opinión anterior"
+        >
+          <img
+            src="assets/icon-chevron-left.svg"
+            alt=""
+            width="40"
+            height="40"
+          />
+        </button>
+
+        <div
+          class="carrusel__pista"
+          id="opPista"
+          tabindex="0"
+          aria-label="Opiniones de clientes"
+        >
+          <figure class="opinion">
+            <img
+              class="opinion__foto"
+              src="assets/foto-cliente.png"
+              alt="Melissa García"
+              width="114"
+              height="114"
+              loading="lazy"
+            />
+            <div class="opinion__contenido">
+              <blockquote>
+                “Pedí mi hamburguesa favorita y llegó caliente, súper rápido y
+                tal como la quería. Me encanta lo fácil que es pedir. ¡Encargalo
+                ya es mi solución para esos días en los que no quiero cocinar!”
+              </blockquote>
+              <figcaption>
+                <strong>Melissa García</strong>
+                <span>Cliente de Encargalo</span>
+              </figcaption>
+            </div>
+          </figure>
+
+          <figure class="opinion">
+            <img
+              class="opinion__foto"
+              src="assets/cliente-1.jpg"
+              alt="Carlos Rodríguez"
+              width="114"
+              height="114"
+              loading="lazy"
+            />
+            <div class="opinion__contenido">
+              <blockquote>
+                “Uso Encárgalo cada semana para el mercado. Poder seguir mi
+                pedido en tiempo real me da mucha tranquilidad, sé exactamente
+                cuándo llega.”
+              </blockquote>
+              <figcaption>
+                <strong>Carlos Rodríguez</strong>
+                <span>Cliente de Encargalo</span>
+              </figcaption>
+            </div>
+          </figure>
+
+          <figure class="opinion">
+            <img
+              class="opinion__foto"
+              src="assets/cliente-3.jpg"
+              alt="Génesis Pérez"
+              width="114"
+              height="114"
+              loading="lazy"
+            />
+            <div class="opinion__contenido">
+              <blockquote>
+                “Pagar con pago móvil y subir mi comprobante desde la app fue
+                facilísimo. Ya no imagino pedir de otra forma.”
+              </blockquote>
+              <figcaption>
+                <strong>Génesis Pérez</strong>
+                <span>Cliente de Encargalo</span>
+              </figcaption>
+            </div>
+          </figure>
+
+          <figure class="opinion">
+            <img
+              class="opinion__foto"
+              src="assets/cliente-2.jpg"
+              alt="Luis Medina"
+              width="114"
+              height="114"
+              loading="lazy"
+            />
+            <div class="opinion__contenido">
+              <blockquote>
+                “Encontré tiendas cerca de mi casa que ni sabía que existían.
+                Pedí y en poco tiempo ya lo tenía en mi puerta. Súper práctico.”
+              </blockquote>
+              <figcaption>
+                <strong>Luis Medina</strong>
+                <span>Cliente de Encargalo</span>
+              </figcaption>
+            </div>
+          </figure>
+
+          <figure class="opinion">
+            <img
+              class="opinion__foto"
+              src="assets/cliente-4.jpg"
+              alt="Andreína Salazar"
+              width="114"
+              height="114"
+              loading="lazy"
+            />
+            <div class="opinion__contenido">
+              <blockquote>
+                “Guardé mis direcciones y ahora pedir es cuestión de segundos.
+                Es tan fácil de usar que hasta mi mamá ya pide por Encárgalo.”
+              </blockquote>
+              <figcaption>
+                <strong>Andreína Salazar</strong>
+                <span>Cliente de Encargalo</span>
+              </figcaption>
+            </div>
+          </figure>
+
+          <figure class="opinion">
+            <img
+              class="opinion__foto"
+              src="assets/cliente-5.jpg"
+              alt="José Ramos"
+              width="114"
+              height="114"
+              loading="lazy"
+            />
+            <div class="opinion__contenido">
+              <blockquote>
+                “La comunicación sobre el estado del pedido es clara: siempre sé
+                en qué paso va. Muy recomendado, de verdad.”
+              </blockquote>
+              <figcaption>
+                <strong>José Ramos</strong>
+                <span>Cliente de Encargalo</span>
+              </figcaption>
+            </div>
+          </figure>
+        </div>
+
+        <button
+          class="carrusel__flecha"
+          id="opNext"
+          aria-label="Opinión siguiente"
+        >
+          <img
+            src="assets/icon-chevron-right.svg"
+            alt=""
+            width="40"
+            height="40"
+          />
+        </button>
+      </div>
+    </section>
+
+    <!-- Descarga la app -->
+    <section class="descarga" id="descarga">
+      <img
+        class="telefono"
+        src="assets/telefono.png"
+        alt="Pantalla de bienvenida de la app Encárgalo"
+        width="260"
+        height="516"
+      />
+
+      <div class="invitacion">
+        <p class="eyebrow eyebrow--light">Descarga nuestra app</p>
+        <h2>Tus antojos, a un toque de distancia.</h2>
+        <p class="invitacion__texto">
+          Lleva Encárgalo contigo. Descubre tus tiendas favoritas y pide fácil,
+          rápido y desde donde estés.
+        </p>
+        <div class="tiendas">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.encargalo.app"
+            class="tiendas__play"
+            target="_blank"
+            rel="noopener"
+            aria-label="GET IT ON Google Play"
+          >
+            <img
+              src="assets/google-play.svg"
+              alt="GET IT ON Google Play"
+              width="154"
+              height="45"
+            />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="pie" id="contacto">
+      <div class="pie__info">
+        <div class="pie__marca">
+          <a href="#inicio" aria-label="Encárgalo">
+            <img
+              src="assets/logotipo.png"
+              alt="Encárgalo"
+              width="166"
+              height="37"
+            />
+          </a>
+          <p>
+            Tus favoritos, donde estés. Nos encargamos de llevarte lo que más te
+            gusta.
+          </p>
+        </div>
+
+        <div class="pie__col">
+          <h4>Compañía</h4>
+          <a
+            href="https://wa.me/584221750513?text=%C2%A1Hola!%20Me%20gustar%C3%ADa%20registrar%20mi%20negocio%20en%20Encargalo%20y%20conocer%20c%C3%B3mo%20ser%20aliado."
+            target="_blank"
+            rel="noopener"
+            >Sé tienda aliada</a
+          >
+          <a
+            href="https://wa.me/584221750513?text=%C2%A1Hola!%20Quiero%20ser%20un%20Encargista%20%F0%9F%9B%B5"
+            target="_blank"
+            rel="noopener"
+            >Sé encargista</a
+          >
+          <a
+            href="https://play.google.com/store/apps/details?id=com.encargalo.app"
+            target="_blank"
+            rel="noopener"
+            >Descargar app</a
+          >
+        </div>
+
+        <div class="pie__col">
+          <h4>Servicios</h4>
+          <a href="#servicios">Cómo funciona</a>
+          <a href="terminos-y-condiciones.html">Términos y condiciones</a>
+          <a href="politica-de-privacidad.html">Política de privacidad</a>
+          <a href="eliminar-cuenta.html">Eliminar mi cuenta</a>
+        </div>
+
+        <div class="pie__col pie__col--contacto">
+          <h4>Contáctanos</h4>
+          <p>¿Dudas o problemas con la app? Escríbenos y te ayudamos.</p>
+          <a
+            class="suscripcion"
+            href="mailto:soporte@encargalo.app"
+            aria-label="Escribir a soporte@encargalo.app"
+          >
+            <span>soporte@encargalo.app</span>
+            <span class="suscripcion__enviar">
+              <img
+                src="assets/icon-arrow-right.svg"
+                alt=""
+                width="15"
+                height="15"
+              />
+            </span>
+          </a>
         </div>
       </div>
 
-      <nav class="mobile-nav" id="mobileNav">
-        <a href="#inicio">Inicio</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#como-funciona">Cómo funciona</a>
-        <a href="#features">Features</a>
-        <a href="#testimonios">Testimonios</a>
-        <a href="#como-funciona" class="btn btn-primary btn-block">Descargar app</a>
-      </nav>
-    </header>
-
-    <main>
-      <!-- Hero -->
-      <section class="hero" id="inicio">
-        <div class="container hero__inner">
-          <div class="hero__content">
-            <p class="eyebrow">Rápido · Confiable · Cercano</p>
-            <h1>Tu app de delivery rápida, fácil y confiable</h1>
-            <p>Compra en tus tiendas favoritas y recibe tus encargos en la puerta de tu casa. Encargistas verificados, pago móvil integrado y seguimiento en tiempo real desde que confirmas hasta que llega.</p>
-            <div class="hero__actions">
-              <a href="#" class="store-btn">
-                <svg class="icon store-btn__icon" viewBox="0 0 24 24"><path d="M17.5 3H6.5C4.6 3 3 4.6 3 6.5v11C3 19.4 4.6 21 6.5 21h11c1.9 0 3.5-1.6 3.5-3.5v-11C21 4.6 19.4 3 17.5 3z"/><path d="m10 9 5 3-5 3z"/></svg>
-                <span class="store-btn__text"><span>Disponible en</span><strong>App Store</strong></span>
-              </a>
-              <a href="#" class="store-btn">
-                <svg class="icon store-btn__icon" viewBox="0 0 24 24"><path d="m3 3 10.5 9L3 21z"/><path d="m13.5 12 3.8-2.2L21 12l-3.7 2.2z"/><path d="M3 3l14 8.2"/><path d="M3 21l14-8.2"/></svg>
-                <span class="store-btn__text"><span>Disponible en</span><strong>Google Play</strong></span>
-              </a>
-            </div>
-          </div>
-
-          <div class="hero__visual">
-            <div class="hero__blob" aria-hidden="true"></div>
-            <div class="hero__mark">
-              <img src="assets/isotipo-white.svg" alt="Encárgalo" />
-            </div>
-
-            <div class="float-card float-card--shop">
-              <div class="float-card__thumb">
-                <svg class="icon" viewBox="0 0 24 24"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5"/><path d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"/><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"/></svg>
-              </div>
-              <div class="float-card__body">
-                <strong>Tiendas aliadas</strong>
-                <span class="float-card__meta">
-                  <svg class="icon icon--solid float-card__star" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                  4.8 · Entrega en 15-20 min
-                </span>
-              </div>
-            </div>
-
-            <div class="float-card float-card--tracking">
-              <svg class="icon float-card__icon" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-              <div class="float-card__body">
-                <strong>Tu pedido va en camino</strong>
-                <span class="float-card__meta">Llega en 12 min</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Por qué elegir Encárgalo -->
-      <section class="benefits" id="nosotros">
-        <div class="container">
-          <div class="section-head">
-            <p class="eyebrow">Nosotros</p>
-            <h2>¿Por qué elegir Encárgalo?</h2>
-            <p class="section-head__text">Encárgalo es la plataforma que conecta a usuarios en Venezuela con tiendas aliadas y encargistas verificados para la compra y entrega de productos. Amigable, rápido y siempre dispuesto a ayudar.</p>
-          </div>
-
-          <div class="benefits__grid">
-            <div class="benefit">
-              <div class="benefit-icon">
-                <svg class="icon" viewBox="0 0 24 24"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"/></svg>
-              </div>
-              <h3>Entrega rápida</h3>
-              <p>Tus encargos llegan en minutos, no en horas, gracias a encargistas cerca de ti.</p>
-            </div>
-            <div class="benefit">
-              <div class="benefit-icon">
-                <svg class="icon" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
-              </div>
-              <h3>Pago móvil integrado</h3>
-              <p>Paga directo desde la app y controla cada transacción sin salir de Encárgalo.</p>
-            </div>
-            <div class="benefit">
-              <div class="benefit-icon">
-                <svg class="icon" viewBox="0 0 24 24"><path d="m16 11 2 2 4-4"/><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-              </div>
-              <h3>Encargistas verificados</h3>
-              <p>Personas reales y verificadas cuidan cada pedido de principio a fin.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Forma innovadora de comprar -->
-      <section class="innovative" id="como-funciona">
-        <div class="container innovative__inner">
-          <div class="innovative__content">
-            <p class="eyebrow">Cómo funciona</p>
-            <h2>Una forma más fácil de comprar</h2>
-            <p>Elige la tienda, arma tu pedido y déjanos el resto. Sigue tu encargista paso a paso en el mapa desde que sale hasta que llega a tu puerta.</p>
-
-            <div class="innovative__stores">
-              <a href="#" class="store-btn">
-                <svg class="icon store-btn__icon" viewBox="0 0 24 24"><path d="M17.5 3H6.5C4.6 3 3 4.6 3 6.5v11C3 19.4 4.6 21 6.5 21h11c1.9 0 3.5-1.6 3.5-3.5v-11C21 4.6 19.4 3 17.5 3z"/><path d="m10 9 5 3-5 3z"/></svg>
-                <span class="store-btn__text"><span>Disponible en</span><strong>App Store</strong></span>
-              </a>
-              <a href="#" class="store-btn">
-                <svg class="icon store-btn__icon" viewBox="0 0 24 24"><path d="m3 3 10.5 9L3 21z"/><path d="m13.5 12 3.8-2.2L21 12l-3.7 2.2z"/><path d="M3 3l14 8.2"/><path d="M3 21l14-8.2"/></svg>
-                <span class="store-btn__text"><span>Disponible en</span><strong>Google Play</strong></span>
-              </a>
-            </div>
-          </div>
-
-          <div class="innovative__visual">
-            <div class="innovative__dashed" aria-hidden="true"></div>
-            <div class="innovative__mark">
-              <img src="assets/favicon.svg" alt="Encárgalo" />
-            </div>
-
-            <div class="float-card float-card--status">
-              <span class="float-card__dot"></span>
-              <div class="float-card__body">
-                <strong>Encargista en camino</strong>
-                <span class="float-card__meta">Actualizado en tiempo real</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Features destacadas -->
-      <section class="features" id="features">
-        <div class="container">
-          <div class="section-head">
-            <p class="eyebrow eyebrow--on-dark">Features</p>
-            <h2>Features destacadas</h2>
-          </div>
-
-          <div class="features__grid">
-            <div class="features__col">
-              <div class="feature">
-                <svg class="icon feature__icon" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-                <div>
-                  <h3>Rastreo en tiempo real</h3>
-                  <p>Ve exactamente dónde está tu encargo en cada momento.</p>
-                </div>
-              </div>
-              <div class="feature">
-                <svg class="icon feature__icon" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
-                <div>
-                  <h3>Pago móvil integrado</h3>
-                  <p>Registra tu cuenta y paga sin salir de la app.</p>
-                </div>
-              </div>
-              <div class="feature">
-                <svg class="icon feature__icon" viewBox="0 0 24 24"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5"/><path d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"/><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"/></svg>
-                <div>
-                  <h3>Tiendas aliadas cerca de ti</h3>
-                  <p>Descubre comercios verificados en tu zona.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="features__phone">
-              <div class="features__mark">
-                <img src="assets/favicon.svg" alt="Encárgalo" />
-              </div>
-            </div>
-
-            <div class="features__col features__col--right">
-              <div class="feature">
-                <svg class="icon feature__icon" viewBox="0 0 24 24"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>
-                <div>
-                  <h3>Notificaciones al instante</h3>
-                  <p>Entérate de cada cambio de estado sin recargar nada.</p>
-                </div>
-              </div>
-              <div class="feature">
-                <svg class="icon feature__icon" viewBox="0 0 24 24"><path d="M12 17V7"/><path d="M16 8h-6a2 2 0 0 0 0 4h4a2 2 0 0 1 0 4H8"/><path d="M4 3a1 1 0 0 1 1-1 1.3 1.3 0 0 1 .7.2l.933.6a1.3 1.3 0 0 0 1.4 0l.934-.6a1.3 1.3 0 0 1 1.4 0l.933.6a1.3 1.3 0 0 0 1.4 0l.933-.6a1.3 1.3 0 0 1 1.4 0l.934.6a1.3 1.3 0 0 0 1.4 0l.933-.6A1.3 1.3 0 0 1 19 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1 1.3 1.3 0 0 1-.7-.2l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.934.6a1.3 1.3 0 0 1-1.4 0l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-1.4 0l-.934-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-.7.2 1 1 0 0 1-1-1z"/></svg>
-                <div>
-                  <h3>Historial de pedidos</h3>
-                  <p>Consulta y repite tus encargos anteriores en segundos.</p>
-                </div>
-              </div>
-              <div class="feature">
-                <svg class="icon feature__icon" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-                <div>
-                  <h3>Devoluciones fáciles</h3>
-                  <p>Solicita una devolución directo desde tu pedido.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Estadísticas -->
-      <section class="stats">
-        <div class="container stats__grid">
-          <div class="stat-card">
-            <strong>1000+</strong>
-            <span>Usuarios activos</span>
-          </div>
-          <div class="stat-card">
-            <strong>400+</strong>
-            <span>Tiendas aliadas</span>
-          </div>
-          <div class="stat-card">
-            <strong>200+</strong>
-            <span>Ciudades cubiertas</span>
-          </div>
-          <div class="stat-card">
-            <strong>
-              <svg class="icon icon--solid stat-card__star" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-              4.8
-            </strong>
-            <span>Calificación promedio</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Promociones -->
-      <section class="promo" id="promos">
-        <div class="container">
-          <div class="section-head">
-            <p class="eyebrow">Promociones</p>
-            <h2>Pedir nunca fue tan fácil</h2>
-          </div>
-
-          <div class="promo__grid">
-            <div class="promo__card promo__card--offer">
-              <div class="promo__icon">
-                <svg class="icon" viewBox="0 0 24 24"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5"/><path d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"/><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"/></svg>
-              </div>
-              <div class="promo__text">
-                <span>Pedir nunca fue tan fácil</span>
-                <strong>¡Pide ahora!</strong>
-              </div>
-            </div>
-
-            <div class="promo__card promo__card--shipping">
-              <div class="promo__icon">
-                <svg class="icon" viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="18.5" cy="17.5" r="2.5"/><path d="M15 6a1 1 0 0 1 1 1v8.5M5.5 17.5H4a1 1 0 0 1-1-1V13m2.5 4.5h10m-9-11h4l3.5 5H21l-2.5-5"/><path d="M3 13l3-5h5v5"/></svg>
-              </div>
-              <div class="promo__text">
-                <span>Tus favoritos con</span>
-                <strong>Envío gratis</strong>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Testimonios -->
-      <section class="testimonials" id="testimonios">
-        <div class="container testimonials__inner">
-          <div class="testimonials__media">
-            <div class="testimonials__media-inner">
-              <img src="assets/favicon.svg" alt="Encárgalo" class="testimonials__mark" />
-            </div>
-          </div>
-
-          <div class="testimonials__content">
-            <p class="eyebrow">Testimonios</p>
-            <div class="quote-mark">&ldquo;</div>
-            <p class="testimonial-text" id="testimonialText">Pedí unas medicinas para mi mamá y llegaron en 20 minutos. Encárgalo me salvó ese día.</p>
-            <div class="testimonial-author">
-              <span class="testimonial-author__avatar" id="testimonialAvatar">MF</span>
-              <div>
-                <strong id="testimonialName">María Fernanda G.</strong>
-                <span>Cliente Encárgalo</span>
-              </div>
-            </div>
-            <div class="testimonials__nav">
-              <button class="arrow-btn" id="testimonialPrev" aria-label="Testimonio anterior">
-                <svg class="icon" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
-              </button>
-              <button class="arrow-btn" id="testimonialNext" aria-label="Testimonio siguiente">
-                <svg class="icon" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer__grid">
-          <div class="footer__brand">
-            <a href="#inicio" class="logo">
-              <img src="assets/isotipo-white.svg" alt="" class="logo__mark-img" />
-              <span class="logo__word">Encárgalo</span>
-            </a>
-            <p>Tu app de delivery rápida, fácil y confiable. La forma más fácil de pedir lo que necesitas, cuando lo necesitas.</p>
-          </div>
-
-          <div class="footer__col">
-            <h4>Producto</h4>
-            <ul>
-              <li><a href="#inicio">Inicio</a></li>
-              <li><a href="#como-funciona">Cómo funciona</a></li>
-              <li><a href="#features">Features</a></li>
-              <li><a href="#testimonios">Testimonios</a></li>
-            </ul>
-          </div>
-
-          <div class="footer__col">
-            <h4>Compañía</h4>
-            <ul>
-              <li><a href="#nosotros">Nosotros</a></li>
-              <li><a href="mailto:soporte@encargalo.app">Contacto</a></li>
-              <li><a href="https://wa.me/584221750513?text=%C2%A1Hola!%20Me%20gustar%C3%ADa%20registrar%20mi%20negocio%20en%20Encargalo%20y%20conocer%20c%C3%B3mo%20ser%20aliado." target="_blank" rel="noopener">Sé tienda aliada</a></li>
-              <li><a href="https://wa.me/584221750513?text=%C2%A1Hola!%20Quiero%20ser%20un%20Encargista%20%F0%9F%9B%B5" target="_blank" rel="noopener">Sé encargista</a></li>
-            </ul>
-          </div>
-
-          <div class="footer__col">
-            <h4>Legal</h4>
-            <ul>
-              <li><a href="terminos-y-condiciones.html">Términos y condiciones</a></li>
-              <li><a href="politica-de-privacidad.html">Política de privacidad</a></li>
-              <li><a href="eliminar-cuenta.html">Eliminar mi cuenta</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="footer__bottom">
-          <span>© 2026 Encárgalo. Todos los derechos reservados.</span>
-          <div class="socials">
-            <a href="mailto:soporte@encargalo.app" aria-label="Correo">
-              <svg class="icon" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
-            </a>
-            <a href="https://wa.me/584221750513?text=%C2%A1Hola!%20Tuve%20un%20problema%20con%20la%20aplicaci%C3%B3n%20y%20necesito%20ayuda." target="_blank" rel="noopener" aria-label="WhatsApp">
-              <svg class="icon" viewBox="0 0 24 24"><path d="M3 21l1.65-4.95A9 9 0 1 1 8.05 19.35Z"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0zm0 0a5 5 0 0 0 5 5"/></svg>
-            </a>
+      <div class="pie__legal">
+        <hr />
+        <div class="pie__legal-fila">
+          <p>© 2026 Encargalo. Todos los derechos reservados.</p>
+          <div class="pie__politicas">
+            <a href="terminos-y-condiciones.html">Términos y condiciones</a>
+            <a href="politica-de-privacidad.html">Política de privacidad</a>
           </div>
         </div>
       </div>
