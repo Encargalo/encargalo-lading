@@ -68,10 +68,10 @@
 <body>
 <div class="container">
   <h1>Política de Privacidad</h1>
-  <div class="updated">Última actualización: 7 de agosto de 2026</div>
+  <div class="updated">Última actualización: 25 de agosto de 2026</div>
 
   <h2>1. Introducción y alcance</h2>
-  <p>Esta Política de Privacidad describe cómo Encárgalo ("nosotros", "la app") recolecta, usa, almacena y protege la información de los usuarios que utilizan la aplicación móvil Encárgalo, disponible para Android e iOS. Al usar la app, aceptas las prácticas descritas en este documento.</p>
+  <p>Esta Política de Privacidad describe cómo Encárgalo ("nosotros") recolecta, usa, almacena y protege la información de los usuarios de nuestras aplicaciones móviles, disponibles para Android e iOS: <strong>Encárgalo</strong> (para clientes que hacen pedidos) y <strong>yome-encargo</strong> (para encargistas/riders que realizan las entregas). Ambas apps comparten la misma infraestructura y proveedores de servicios; las diferencias entre lo que recolecta cada una se detallan en las secciones siguientes. Al usar cualquiera de las dos apps, aceptas las prácticas descritas en este documento.</p>
 
   <h2>2. Datos que recopilamos</h2>
 
@@ -85,22 +85,28 @@
   </ul>
 
   <h3>2.2 Datos de ubicación</h3>
-  <p>Solicitamos acceso a tu ubicación mientras usas la app para mostrarte tiendas y encargistas cercanos, y para calcular direcciones de entrega. Tus direcciones y coordenadas se envían a la API de Google Maps para calcular rutas y distancias de entrega. Puedes activar o desactivar el permiso de ubicación en cualquier momento desde los ajustes de tu dispositivo.</p>
+  <p>En la app <strong>Encárgalo</strong>, solicitamos acceso a tu ubicación mientras usas la app para mostrarte tiendas y encargistas cercanos, y para calcular direcciones de entrega. En la app <strong>yome-encargo</strong>, el encargista comparte su ubicación en tiempo real mientras la app está abierta, para mostrarla en el mapa y calcular la ruta y distancia hacia los pedidos asignados. En ambos casos, las coordenadas se envían a la API de Google Maps para calcular rutas y distancias. Puedes activar o desactivar el permiso de ubicación en cualquier momento desde los ajustes de tu dispositivo.</p>
 
-  <h3>2.3 Fotos y comprobantes de pago</h3>
-  <p>Solicitamos acceso a tu galería de fotos únicamente cuando decides adjuntar un comprobante de pago (por ejemplo, de una transferencia o Pago Móvil) para validar un pedido.</p>
+  <h3>2.3 Fotos, comprobantes de pago y expediente del encargista</h3>
+  <p>En la app Encárgalo, solicitamos acceso a tu galería de fotos únicamente cuando decides adjuntar un comprobante de pago (por ejemplo, de una transferencia o Pago Móvil) para validar un pedido. En la app yome-encargo, además, el encargista puede subir fotografías como parte de su expediente/perfil de verificación (por ejemplo, foto de cédula o documentos de identificación) necesarias para habilitarlo a operar en la plataforma.</p>
 
   <h3>2.4 Datos de autenticación con Google</h3>
   <p>Si eliges iniciar sesión con Google, recibimos tu nombre, correo electrónico y una foto de perfil (si está disponible) a través del inicio de sesión oficial de Google. No accedemos a tu contraseña de Google ni a otros datos de tu cuenta de Google.</p>
 
-  <h3>2.5 Datos técnicos y de errores</h3>
+  <h3>2.5 Datos de sesión y autenticación en el dispositivo</h3>
+  <p>Para mantener tu sesión iniciada usamos cookies/tokens de sesión, que se almacenan de forma cifrada en tu dispositivo (almacenamiento seguro del sistema operativo). Estos datos permiten identificar tu sesión ante nuestros servidores y no se comparten con terceros distintos de nuestros proveedores de infraestructura.</p>
+
+  <h3>2.6 Datos técnicos y de errores</h3>
   <p>Usamos Sentry, un servicio de monitoreo de errores, para detectar y corregir fallos técnicos de la app. Esto puede incluir información sobre el dispositivo, la versión del sistema operativo, y el contexto técnico del error (no se recolecta información personal identificable de forma intencional en estos reportes).</p>
 
-  <h3>2.6 Datos de uso de la app</h3>
+  <h3>2.7 Datos de uso de la app</h3>
   <p>Historial de pedidos, saldo dentro de la app, historial de transacciones y direcciones guardadas.</p>
 
-  <h3>2.7 Datos de Pago Móvil</h3>
+  <h3>2.8 Datos de Pago Móvil</h3>
   <p>Si registras un Pago Móvil para recibir devoluciones o reembolsos, guardamos tu número de teléfono, el código del banco y tu número de cédula o RIF asociados a esa cuenta bancaria. Estos datos se usan exclusivamente para procesar tus devoluciones.</p>
+
+  <h3>2.9 Datos financieros y de desempeño del encargista (app yome-encargo)</h3>
+  <p>Para los encargistas/riders, además de lo anterior recolectamos: saldo disponible (en bolívares y dólares, según tasa BCV), historial de movimientos y comisiones generadas por sus entregas, y sus solicitudes de retiro de saldo. Estos datos se usan exclusivamente para calcular y procesar los pagos que corresponden al encargista.</p>
 
   <h2>3. Cómo usamos tus datos</h2>
   <ul>
@@ -114,10 +120,11 @@
 
   <h2>4. Con quién compartimos tus datos</h2>
   <ul>
-    <li><strong>Tiendas aliadas y encargistas</strong>: comparten la información necesaria para completar tu pedido (nombre, dirección de entrega, teléfono de contacto).</li>
-    <li><strong>Proveedores de servicios técnicos</strong>: Google (autenticación y cálculo de rutas/distancias vía Google Maps), Cloudinary (almacenamiento de las imágenes que subes, como comprobantes de pago), Sentry (monitoreo de errores).</li>
+    <li><strong>Tiendas aliadas y encargistas</strong>: comparten entre sí la información necesaria para completar un pedido (nombre, dirección de entrega, teléfono de contacto, ubicación en tiempo real durante la entrega).</li>
+    <li><strong>Proveedores de servicios técnicos</strong>: Google (autenticación y cálculo de rutas/distancias vía Google Maps), Cloudinary (almacenamiento de las imágenes que subes, como comprobantes de pago o fotos de expediente), Sentry (monitoreo de errores).</li>
     <li><strong>Autoridades</strong>: cuando la ley lo requiera.</li>
   </ul>
+  <p>La app yome-encargo (encargistas) utiliza el mismo backend y los mismos proveedores de servicios técnicos que la app Encárgalo (clientes); no incorpora proveedores adicionales.</p>
   <p>No vendemos tus datos personales a terceros.</p>
 
   <h2>5. Almacenamiento y seguridad</h2>
@@ -130,7 +137,7 @@
   </ul>
 
   <h3>6.1 Eliminación de tu cuenta y tus datos</h3>
-  <p>Puedes solicitar la eliminación de tu cuenta y de tus datos personales en cualquier momento por WhatsApp al <strong>+58 422-1750513</strong> o escribiendo a <strong>soporte@encargalo.app</strong>. Al recibir tu solicitud, tu cuenta se suspende de inmediato y comienza un período de gracia de 30 días: si inicias sesión de nuevo dentro de ese plazo, la cuenta se reactiva automáticamente; si pasan los 30 días sin que inicies sesión, tu cuenta y tus datos se eliminan de forma permanente.</p>
+  <p>Ya seas cliente (app Encárgalo) o encargista/rider (app yome-encargo), puedes solicitar la eliminación de tu cuenta y de tus datos personales en cualquier momento por WhatsApp al <strong>+58 422-1750513</strong> o escribiendo a <strong>soporte@encargalo.app</strong>. Al recibir tu solicitud, tu cuenta se marca como pendiente de eliminación y se cierra la sesión en todos tus dispositivos de inmediato, iniciando un período de gracia de 30 días: si vuelves a iniciar sesión dentro de ese plazo, la solicitud se cancela automáticamente y la cuenta se reactiva; si pasan los 30 días sin que inicies sesión, tu cuenta y tus datos se eliminan de forma permanente.</p>
   <p>Encontrarás el detalle completo del proceso y de qué datos se eliminan o conservan en <a href="eliminar-cuenta.html">esta página</a>.</p>
 
   <h2>7. Retención de datos</h2>
