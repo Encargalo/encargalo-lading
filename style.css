@@ -227,6 +227,10 @@ button {
   font-weight: 600;
 }
 
+.nav__descarga {
+  display: none;
+}
+
 .nav__actions {
   display: flex;
   align-items: center;
@@ -897,6 +901,28 @@ button {
 
   .nav__links.is-open {
     display: flex;
+  }
+
+  .nav__links a.nav__descarga {
+    display: inline-flex;
+    width: auto;
+    height: 38px;
+    padding: 0 16px;
+    margin-top: 8px;
+    color: #fff;
+    font-size: 14px;
+  }
+
+  .nav__links a.nav__descarga:hover {
+    color: #fff;
+  }
+
+  .nav__actions-descarga {
+    display: none;
+  }
+
+  .presentacion {
+    padding-top: 20px;
   }
 
   .nav__links a {
